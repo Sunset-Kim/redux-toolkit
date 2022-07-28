@@ -1,12 +1,12 @@
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { increment, decrement } from "./index";
 
 function App() {
-  const { value } = useSelector((state) => state.count);
+  const { value } = useSelector((state) => state.counter);
   const dispatch = useDispatch();
-  console.log(value);
 
-  const increaseCounter = useCallback(() => dispatch({ type: "increase" }), []);
+  const increaseCounter = useCallback(() => dispatch(increment()), []);
 
   return (
     <div className="App">
